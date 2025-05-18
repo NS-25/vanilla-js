@@ -21,9 +21,16 @@ const addTodo = () => {
 
   todos.push({ text, done: false });
   input.value = "";
-
-
+  renderTodos();
 }
+//// Toggle "done" status
+
+const toggleTodo = (index) => {
+  todos[index].done = !todos[index];
+  renderTodos();
+}
+///// 
+
 
 
 addBtn.addEventListener('click', addTodo);
